@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик пищи</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Планировщик пищи</h1>
+        
+        <h2>Справочник продуктов</h2>
+
+        <!-- Удалили старые закомментированные поля -->
+        <button id="addNewProductButton">Добавить продукт</button>
+
+        <button id="clearProducts">Очистить справочник продуктов</button>
+        <div id="productList">
+            <!-- Здесь будут отображаться добавленные продукты -->
+        </div>
+        <div id="productPagination"></div>
+
+        <!-- Модальное окно для добавления нового продукта -->
+        <div id="addProductModal" class="modal">
+            <div class="modal-content">
+                <span class="close-add">&times;</span>
+                <h2>Добавить новый продукт</h2>
+                <form id="addProductForm">
+                    <input type="text" id="newProductName" placeholder="Название продукта" required>
+                    <input type="number" id="newProductCalories" placeholder="Калории (ккал)" required>
+                    <input type="number" id="newProductProteins" placeholder="Белки (г)" required>
+                    <input type="number" id="newProductFats" placeholder="Жиры (г)" required>
+                    <input type="number" id="newProductCarbs" placeholder="Углеводы (г)" required>
+                    <button type="submit">Добавить продукт</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Модальное окно для редактирования продукта -->
+        <div id="editProductModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Редактирование продукта</h2>
+                <form id="editProductForm">
+                    <input type="text" id="editProductName" placeholder="Название продукта" required>
+                    <input type="number" id="editProductCalories" placeholder="Калории (ккал)" required>
+                    <input type="number" id="editProductProteins" placeholder="Белки (г)" required>
+                    <input type="number" id="editProductFats" placeholder="Жиры (г)" required>
+                    <input type="number" id="editProductCarbs" placeholder="Углеводы (г)" required>
+                    <button type="submit">Сохранить изменения</button>
+                </form>
+            </div>
+        </div>
+
+        <h2>Планировщик на день</h2>
+        <form id="mealForm">
+            <select id="mealTime" required>
+                <option value="">Выбрать прием пищи</option>
+                <option value="Завтрак">Завтрак</option>
+                <option value="Обед">Обед</option>
+                <option value="Ужин">Ужин</option>
+                <option value="Перекус">Перекус</option>
+            </select>
+            <select id="productSelect" required>
+                <option value="">Выбрать продукт</option>
+            </select>
+            <button type="submit">Добавить в расписание</button>
+        </form>
+
+        <button id="clearSchedule">Очистить расписание на день</button>
+        <div id="mealSchedule">
+            <!-- Здесь будет отображаться расписание на день -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
